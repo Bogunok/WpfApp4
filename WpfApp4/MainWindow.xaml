@@ -1,0 +1,172 @@
+﻿<Window x:Name="PersonData" x:Class="WpfApp4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp4"
+        mc:Ignorable="d"
+        Title="" Height="700" Width="1400">
+    <Grid Background="#FFB2C2DC">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50*"></RowDefinition>
+            <RowDefinition Height="50*"></RowDefinition>
+            <RowDefinition Height="50*"></RowDefinition>
+            <RowDefinition Height="50*"></RowDefinition>
+            <RowDefinition Height="50*"></RowDefinition>
+            <RowDefinition Height="50*"></RowDefinition>
+            <RowDefinition Height="50*"></RowDefinition>
+            <RowDefinition Height="50*"></RowDefinition>
+            <RowDefinition Height="50*"></RowDefinition>
+            <RowDefinition Height="50*"></RowDefinition>
+            <RowDefinition Height="50*"></RowDefinition>
+            <RowDefinition Height="50*"></RowDefinition>
+            <RowDefinition Height="50*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="105*"/>
+            <ColumnDefinition Width="183*"/>
+            <ColumnDefinition Width="170*"/>
+            <ColumnDefinition Width="104*"/>
+            <ColumnDefinition Width="188*"/>
+            <ColumnDefinition Width="187*"/>
+            <ColumnDefinition Width="151*"/>
+            <ColumnDefinition Width="112*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="EnterName" Grid.Column="1" FontSize="16" FontWeight="Bold" FontFamily="Britannic Bold" Width="200" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,14,0,7">Enter name</Label>
+        <TextBox x:Name="NameInput" Grid.Column="2" Grid.Row="0" Margin="0,10,0,10"></TextBox>
+        <Label x:Name="EnterSurname" Grid.Column="1" Grid.Row="1" FontSize="16" FontWeight="Bold" FontFamily="Britannic Bold" Width="200" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,14,0,6">Enter surname</Label>
+        <TextBox x:Name="SurnameInput" Grid.Column="2" Grid.Row="1" Margin="0,10,0,10"></TextBox>
+        <Label x:Name="EnterMail" Grid.Column="1" Grid.Row="2" FontSize="16" FontWeight="Bold" FontFamily="Britannic Bold" Width="200" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,14,0,7">Enter email</Label>
+        <TextBox x:Name="MailInput" Grid.Column="2" Grid.Row="2" Margin="0,10,0,10"></TextBox>
+        <Label x:Name="EnterBirthday" Grid.Column="1" Grid.Row="3" FontSize="16" FontWeight="Bold" FontFamily="Britannic Bold" Width="200" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" Margin="0,14,0,6">Select your date of birth</Label>
+        <DatePicker x:Name="BirthdatePicker" Grid.Row="3" Grid.Column="2" Margin="10,10,10,10" BorderBrush="#FFB2C2DC"></DatePicker>
+        <Button x:Name="Proceed" Grid.Row="3" Grid.Column="3" Content="Proceed" Margin="10,0,10,0" 
+                FontFamily="Book Antiqua" Background="Gray" FontSize="12" BorderThickness="1,1,1,1" 
+                Foreground="Black" Command="{Binding ProceedCommand}" VerticalAlignment="Top" IsDefault="True" Height="45"/>
+
+        <Label x:Name="Name"  Grid.Row="4" FontSize="14" FontWeight="Bold" Foreground="Black" FontFamily="Britannic Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="44">Name</Label>
+        <TextBlock x:Name="NameOutput"   Grid.Row="4" Grid.Column="1" FontSize="14" FontWeight="Bold" Foreground="Black" FontFamily="Britannic Bold"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="15" Width="0"></TextBlock>
+        <Label x:Name="Surname"  Grid.Row="5" FontSize="14" FontWeight="Bold" Foreground="Black" FontFamily="Britannic Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="26" Width="66">Surname</Label>
+        <TextBlock x:Name="SurnameOutput"  Grid.Row="5" Grid.Column="1" FontSize="14" FontWeight="Bold" Foreground="Black" FontFamily="Britannic Bold"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="16" Width="0"></TextBlock>
+        <Label x:Name="Mail"  Grid.Row="6" FontSize="14" FontWeight="Bold" Foreground="Black" FontFamily="Britannic Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="36">Mail</Label>
+        <TextBlock x:Name="MailOutput"   Grid.Row="6" Grid.Column="1" FontSize="14" FontWeight="Bold" Foreground="Black" FontFamily="Britannic Bold"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="15" Width="0"></TextBlock>
+        <Label x:Name="DateOfBirth"  Grid.Row="7" FontSize="14" FontWeight="Bold" Foreground="Black" FontFamily="Britannic Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="26" Width="88">Date of birth</Label>
+        <TextBlock x:Name="DateOfBirthOutput"  Grid.Row="7" Grid.Column="1" FontSize="14" FontWeight="Bold" Foreground="Black" FontFamily="Britannic Bold"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="16" Width="0"></TextBlock>
+
+        <Label x:Name="IsAdult"  Grid.Row="8" FontSize="14" FontWeight="Bold" Foreground="Black" FontFamily="Britannic Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="56">Is adult</Label>
+        <TextBlock x:Name="IsAdultOutput"   Grid.Row="8" Grid.Column="1" FontSize="14" FontWeight="Bold" Foreground="Black" FontFamily="Britannic Bold"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="15" Width="0" />
+        <Label x:Name="SunSign"  Grid.Row="9" FontSize="14" FontWeight="Bold" Foreground="Black" FontFamily="Britannic Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="64">Sun sign</Label>
+        <TextBlock x:Name="SunSignOutput"  Grid.Row="9" Grid.Column="1" FontSize="14" FontWeight="Bold" Foreground="Black" FontFamily="Britannic Bold"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="16" Width="0"></TextBlock>
+        <Label x:Name="ChineseSign"  Grid.Row="10" FontSize="14" FontWeight="Bold" Foreground="Black" FontFamily="Britannic Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="90">Chinese sign</Label>
+        <TextBlock x:Name="ChineseSignOutput"   Grid.Row="10" Grid.Column="1" FontSize="14" FontWeight="Bold" Foreground="Black" FontFamily="Britannic Bold"  HorizontalAlignment="Center" VerticalAlignment="Center" Height="16" Width="0" ></TextBlock>
+
+        <Label x:Name="HappyBirthdayGreeting" Grid.Row="11" Grid.Column="0" FontSize="14" FontWeight="Bold" Foreground="White" FontFamily="Britannic Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="10" Width="10"></Label>
+
+        <Button x:Name="AddPerson" Grid.Row="0" Grid.Column="4" Content="Add person" Margin="10,0,10,0" 
+        FontFamily="Book Antiqua" Background="Gray" FontSize="12" BorderThickness="1,1,1,1" 
+        Foreground="Black" Click="AddPerson_Click"  VerticalAlignment="Top" IsDefault="True" Height="45"/>
+
+        <Button x:Name="EditPerson" Grid.Row="0" Grid.Column="5" Content="Edit" Margin="10,0,10,0" 
+        FontFamily="Book Antiqua" Background="Gray" FontSize="12" BorderThickness="1,1,1,1" 
+        Foreground="Black" Click="EditPerson_Click" VerticalAlignment="Top" IsDefault="True" Height="45"/>
+
+        <Button x:Name="DeletePerson" Grid.Row="0" Grid.Column="6" Content="Delete" Margin="10,0,10,0" 
+        FontFamily="Book Antiqua" Background="Gray" FontSize="12" BorderThickness="1,1,1,1" 
+        Foreground="Black" Click="DeletePerson_Click" VerticalAlignment="Top" IsDefault="True" Height="45"/>
+
+        <Button x:Name="SavePerson" Grid.Row="0" Grid.Column="7" Content="Save" Margin="10,0,10,0" 
+        FontFamily="Book Antiqua" Background="Gray" FontSize="12" BorderThickness="1,1,1,1" 
+        Foreground="Black" Click="SavePerson_Click" VerticalAlignment="Top" IsDefault="True" Height="45"/>
+
+        <ScrollViewer Grid.Row="1" Grid.Column="4" Grid.ColumnSpan="4" Grid.RowSpan="9" VerticalScrollBarVisibility="Auto" 
+                      PreviewMouseWheel="ScrollViewer_PreviewMouseWheel" Margin="0,48,0,48">
+            <DataGrid x:Name="Table" AutoGenerateColumns="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Name" Binding="{Binding Name, Mode=OneWay}" Width="*"/>
+                    <DataGridTextColumn Header="Surname" Binding="{Binding Surname, Mode=OneWay}" Width="*"/>
+                    <DataGridTextColumn Header="Email" Binding="{Binding Mail, Mode=OneWay}" Width="*"/>
+                    <DataGridTextColumn Header="Birthdate" Binding="{Binding Birthdate, StringFormat='{}{0:d}', Mode=OneWay}" Width="*"/>
+                    <DataGridTemplateColumn Header="Is Adult" Width="*">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox IsChecked="{Binding IsAdult, Mode=OneWay}" IsEnabled="False" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="Western zodiac" Binding="{Binding SunSign, Mode=OneWay}" Width="*"/>
+                    <DataGridTextColumn Header="Chinese zodiac" Binding="{Binding ChineseSign, Mode=OneWay}" Width="*"/>
+                    <DataGridTemplateColumn Header="Is Birthday" Width="*">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox IsChecked="{Binding IsBirthday, Mode=OneWay}" IsEnabled="False" />
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </ScrollViewer>
+        <Label x:Name="ModeLabel" Grid.Row="2" Grid.Column="3" FontSize="14" FontWeight="Bold" Foreground="Black" FontFamily="Britannic Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25">Mode: None</Label>
+        <Label Grid.Row="10" Grid.Column="3" FontSize="14" FontWeight="Bold" Foreground="Black" FontFamily="Britannic Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="90" >Date range</Label>
+        <Label Grid.Row="10" Grid.Column="4" FontSize="14" FontWeight="Bold" Foreground="Black" FontFamily="Britannic Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="135" >Name and Surname</Label>
+        <Label Grid.Row="10" Grid.Column="5" FontSize="14" FontWeight="Bold" Foreground="Black" FontFamily="Britannic Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="129" >Mail and domain</Label>
+        <Label Grid.Row="10" Grid.Column="6" FontSize="14" FontWeight="Bold" Foreground="Black" FontFamily="Britannic Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="90" >Zodiacs</Label>
+        <Label Grid.Row="10" Grid.Column="7" FontSize="14" FontWeight="Bold" Foreground="Black" FontFamily="Britannic Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Center" VerticalAlignment="Center" Height="25" Width="90" >Age/Birthday</Label>
+
+        <Button x:Name="FilterButton" Grid.Row="11" Grid.Column="2" Margin="10,0,10,0" 
+                Content="Filter" FontFamily="Book Antiqua" Background="Gray" FontSize="12" BorderThickness="1,1,1,1" 
+                Foreground="Black" Click="FilterButton_Click" VerticalAlignment="Top" 
+                IsDefault="True" Height="45"></Button>
+
+        <Button x:Name="ClearFilterButton" Grid.Row="12" Grid.Column="2" Margin="10,0,10,0" 
+                Content="Clear filter" FontFamily="Book Antiqua" Background="Gray" FontSize="12" BorderThickness="1,1,1,1" 
+                Foreground="Black" Click="ClearFilterButton_Click" VerticalAlignment="Top" 
+                IsDefault="True" Height="45"></Button>
+        
+        <DatePicker x:Name="FromBirthdatePicker" Grid.Column="3" Grid.Row="11" Margin="10,10,10,10" BorderBrush="#FFB2C2DC"></DatePicker>
+        <DatePicker x:Name="ToBirthdatePicker" Grid.Column="3" Grid.Row="12" Margin="10,10,10,10" BorderBrush="#FFB2C2DC"></DatePicker>
+        <TextBox x:Name="FilterNameInput" Grid.Column="4" Grid.Row="11" Margin="10,10,10,10"></TextBox>
+        <TextBox x:Name="FilterSurnameInput" Grid.Column="4" Grid.Row="12" Margin="10,10,10,10"></TextBox>
+        <TextBox x:Name="FilterMailInput" Grid.Column="5" Grid.Row="11" Margin="10,10,10,10"></TextBox>
+        <TextBox x:Name="FilterDomainInput" Grid.Column="5" Grid.Row="12" Margin="10,10,10,10"></TextBox>
+        <ComboBox x:Name="FilterSunSign" Grid.Column="6" Grid.Row="11" Margin="10,10,10,10" >
+            <ComboBoxItem Content="Any" IsSelected="True"></ComboBoxItem>
+            <ComboBoxItem Content="Aquarius" ></ComboBoxItem>
+            <ComboBoxItem Content="Pisces" ></ComboBoxItem>
+            <ComboBoxItem Content="Aries" ></ComboBoxItem>
+            <ComboBoxItem Content="Taurus" ></ComboBoxItem>
+            <ComboBoxItem Content="Gemini" ></ComboBoxItem>
+            <ComboBoxItem Content="Cancer" ></ComboBoxItem>
+            <ComboBoxItem Content="Leo" ></ComboBoxItem>
+            <ComboBoxItem Content="Virgo" ></ComboBoxItem>
+            <ComboBoxItem Content="Libra" ></ComboBoxItem>
+            <ComboBoxItem Content="Scorpio" ></ComboBoxItem>
+            <ComboBoxItem Content="Sagittarius" ></ComboBoxItem>
+            <ComboBoxItem Content="Capricorn" ></ComboBoxItem>
+        </ComboBox>
+        <ComboBox x:Name="FilterChineseSign" Grid.Column="6" Grid.Row="12" Margin="10,10,10,10" >
+            <ComboBoxItem Content="Any" IsSelected="True"></ComboBoxItem>
+            <ComboBoxItem Content="Monkey" ></ComboBoxItem>
+            <ComboBoxItem Content="Rooster" ></ComboBoxItem>
+            <ComboBoxItem Content="Dog" ></ComboBoxItem>
+            <ComboBoxItem Content="Pig" ></ComboBoxItem>
+            <ComboBoxItem Content="Rat" ></ComboBoxItem>
+            <ComboBoxItem Content="Ox" ></ComboBoxItem>
+            <ComboBoxItem Content="Tiger" ></ComboBoxItem>
+            <ComboBoxItem Content="Rabbit" ></ComboBoxItem>
+            <ComboBoxItem Content="Dragon" ></ComboBoxItem>
+            <ComboBoxItem Content="Snake" ></ComboBoxItem>
+            <ComboBoxItem Content="Horse" ></ComboBoxItem>
+            <ComboBoxItem Content="Goat" ></ComboBoxItem>
+        </ComboBox>
+        <ComboBox x:Name="FilterAge" Grid.Column="7" Grid.Row="11" Margin="10,10,10,10" >
+            <ComboBoxItem Content="Any" IsSelected="True"></ComboBoxItem>
+            <ComboBoxItem Content="Child" ></ComboBoxItem>
+            <ComboBoxItem Content="Adult" ></ComboBoxItem>
+        </ComboBox>
+        <ComboBox x:Name="FilterBirthday" Grid.Column="7" Grid.Row="12" Margin="10,10,10,10" >
+            <ComboBoxItem Content="Any" IsSelected="True"></ComboBoxItem>
+            <ComboBoxItem Content="Is birthday" ></ComboBoxItem>
+            <ComboBoxItem Content="Not birthday" ></ComboBoxItem>
+        </ComboBox>
+    </Grid>
+</Window>
